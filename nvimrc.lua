@@ -74,7 +74,7 @@ augroup end
 ]]
 
 -- view cursor yank
-cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}" -- disabled in visual mode
+cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"  -- disabled in visual mode
 
 ----require "ay_cmp"
 ----require "ay_luasnip"
