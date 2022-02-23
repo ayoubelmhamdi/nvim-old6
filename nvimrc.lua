@@ -1,5 +1,6 @@
 ---@diagnostic disable: unused-local
 vim.g.mapleader = " "
+vim.g.did_load_filetypes = 1
 local cmd = vim.cmd -- to execute Vim commands e.g. cmd('pwd')
 cmd "set termguicolors"
 

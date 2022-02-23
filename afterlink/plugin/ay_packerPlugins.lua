@@ -96,7 +96,7 @@ require("packer").startup(function(use)
   use "fedepujol/move.nvim"
   use "tamton-aquib/essentials.nvim"
   -- test
-
+  use "nathom/filetype.nvim"
   use "max397574/better-escape.nvim"
   use "norcalli/nvim-colorizer.lua"
   use "voldikss/vim-floaterm"
@@ -107,7 +107,7 @@ require("packer").startup(function(use)
   -- use 'ggandor/lightspeed.nvim'
 end)
 
-vim.cmd [[autocmd BufWritePost packerPlugins.lua source <afile> | PackerCompile]]
+vim.cmd [[autocmd BufWritePost ay_packerPlugins.lua source <afile> | PackerCompile]]
 
 -- NOTE: : note todo hack warn pere
 -- TODO: : note todo hack warn pere
