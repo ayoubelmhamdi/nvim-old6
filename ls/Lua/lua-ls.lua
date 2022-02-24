@@ -1,7 +1,7 @@
 -- lua server module
-USER = vim.fn.expand "$USER"
+USER = vim.fn.expand "$HOME"
 -- local sumneko_root_path = "/" .. USER .. "/.cache/lua-language-server"
-local sumneko_root_path = "/home/" .. USER .. "/.cache/lua-language-server"
+local sumneko_root_path = USER .. "/.cache/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
 
 require("lspconfig").sumneko_lua.setup {
