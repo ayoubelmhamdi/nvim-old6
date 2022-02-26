@@ -1,7 +1,6 @@
 ---@diagnostic disable: unused-local
 vim.g.mapleader = " "
-vim.g.did_load_filetypes = 1
-local cmd = vim.cmd -- to execute Vim commands e.g. cmd('pwd')
+local cmd = vim.cmd
 cmd "set termguicolors"
 
 local tsp_ok, tsp = pcall(require, "tsp")
@@ -90,3 +89,8 @@ require("flutter-tools").setup {}
 
 --
 cmd "source ~/.config/nvim/lua/vimScript/init.vim"
+
+cmd "au BufRead,BufNewFile *.conf		setfiletype bash"
+cmd "au BufRead,BufNewFile *.fish		setfiletype fish"
+cmd "let g:do_filetype_lua = 1"
+-- cmd "let g:did_load_filetypes = 1"
