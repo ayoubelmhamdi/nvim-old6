@@ -57,7 +57,7 @@ set noswapfile nowritebackup undofile nobackup
 set backupdir=/tmp/vim2/backup
 set undodir+=/tmp/vim2/undodir
 
-set shada='100000,n/mega/repo/dotfiles/myshada
+set shada='100000,n/mega/repo/dotfiles/shada-nvim/myshada
 set autoread autowrite
 set ignorecase smartcase
 " set list listchars=eol:⏎
