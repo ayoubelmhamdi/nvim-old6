@@ -99,7 +99,6 @@ augroup END
 """"set showmatch
 """"set showmode
 """"set spelllang=en_us
-""""set textwidth=0
 """"set timeoutlen=900
 """"set ttimeout
 """"set ttimeoutlen=0
@@ -120,3 +119,5 @@ augroup END
 """"" using only 1 column (and 1 space) while possible
 """"" set numberwidth=1
 """"" set nolazyredraw
+
+set textwidth=60
