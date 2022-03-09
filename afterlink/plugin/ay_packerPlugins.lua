@@ -52,7 +52,7 @@ require("packer").startup(function(use)
 
   use "akinsho/flutter-tools.nvim"
   use "windwp/nvim-autopairs"
-  use "blackCauldron7/surround.nvim"
+  use {"ur4ltz/surround.nvim", config = function() require"surround".setup{mappings_style = "sandwich"} end}
 
   -- theme+line
   use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }

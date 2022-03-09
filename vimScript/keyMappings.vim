@@ -206,3 +206,4 @@ command! W w
 command! Q q
 command! WQ wq
 command! Wq wq
+command! MyGdb let g:termdebug_wide = 10 | packadd termdebug | Termdebug
