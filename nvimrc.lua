@@ -52,8 +52,8 @@ vim.o.background = "dark"
 
 cmd [[
 " transparent backgroub
-hi Normal guibg=NONE ctermbg=NONE
 colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
 set clipboard+=unnamedplus
 
 " vim -> ysytem yank
