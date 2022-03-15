@@ -69,24 +69,7 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
-function! Quitwindows()
-    let s:total_nr_buffers = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
-    if  s:total_nr_buffers == 1
-      exit! 
-      echo "vide"
-    else
-      bw!
-    endif
-endfunction
-nnoremap <silent> <Space>q :call Quitwindows()<cr>
 
-" TODO: use ftPlugin to manage dart file
-" flutter: key
-inoremap <C-space>/ <cr><C-o>O<TAB>
-inoremap <C-space>c color:<Space>Colors.
-inoremap <C-space>b backgroundColor:<Space>Colors.
-inoremap <C-space>, <Space>,<Left>
-inoremap <C-space><C-,> <Right>,oo<Left><Left>
 
 " FLUTTER
 nnoremap <silent> <Space>fp :FlutterPubGet<cr>
@@ -106,11 +89,11 @@ nnoremap <C-right> :vertical resize +2<cr>
 
 
 
-" Basic file system commands
-" nnoremap <A-o> :!touch<Space>
-" nnoremap <A-e> :!crf<Space>
-" nnoremap <A-d> :!mkdir<Space>
-" nnoremap <A-m> :!mv<Space>%<Space>
+"Basic file system commands
+nnoremap <A-o> :!touch<Space>
+nnoremap <A-e> :!crf<Space>
+nnoremap <A-d> :!mkdir<Space>
+nnoremap <A-m> :!mv<Space>%<Space>
 
 " fix p y
 nnoremap gn :tabnew<CR>
@@ -124,12 +107,9 @@ inoremap <C-space><C-space> <esc>
 
 
 " Alias replace all to
-nnoremap <A-s> :s#\<<C-r>=expand("<cword>")<CR>\>#<C-r>=expand("<cword>")<CR> 
+nnoremap <M-s> :s#\<<C-r>=expand("<cword>")<CR>\>#<C-r>=expand("<cword>")<CR> 
 vnoremap <C-r> "hy:%s/<C-r>h/
-" vnoremap <A-s> y:%s///g<Left><Left><Left><C-r>0<right>
-
-" _co is best than c i dont know why
-
+ 
 " Prevent x from overriding what's in the clipboard.
 " use this tow symbole "_ after motion, 
 nnoremap x "_x
@@ -164,14 +144,11 @@ vnoremap > >gv
 vnoremap < <gv
 
 inoremap <CR> <C-]><C-G>u<CR>
-inoremap <M-a> <C-o>a
-" inoremap <M-o> <C-o>o
+inoremap <M-a> <Right>
+inoremap <M-i> <Left>
 
 " Make sure all types of requirements.txt files get syntax highlighting.
 autocmd BufNewFile,BufRead requirements*.txt set syntax=python
-
-
-
 
 
 
@@ -182,26 +159,17 @@ nnoremap <silent> <A-k> :MoveLine(-1)<CR>
 vnoremap <silent> <A-j> :MoveBlock(1)<CR>
 vnoremap <silent> <A-k> :MoveBlock(-1)<CR>
 
-" Move 1 more lines up or down in normal and visual selection modes.
-" vnoremap K :m '<-2<CR>gv=gv
-" vnoremap J :m '>+1<CR>gv=gv
-" inoremap <C-space>k <C-o>:m .-2<CR>
-" inoremap <C-space>j <C-o>:m .+1<CR>
-" nnoremap <Space>k :m .-2<CR>==
-" nnoremap <Space>j :m .+1<CR>==
-" nnoremap <Space>m :m .+==<Left><Left>
 
-"Lets me select moving by number.
-" nnoremap <Space>k :m .-2==<Left><Left>
-" nnoremap <Space>j :m .+1==<Left><Left>
 
 " Command 
 command! Telescopefindfiledart lua require("telescope.builtin").find_files({find_command = {"fd","--type","f","-E","*.lock","-E","ios","-E","android","-E","test","-E","build","-E","web","-E","linux","-E","*.png","-E","*.jpg","-E","*.md"}})
-command! Ps PackerSync
-command! Pi PackerInstall
-command! Pc PackerClean
 command! Telescopefy Telescope frecency default_text=:CWD: 
 command! Reloader lua require('telescope').reloader()
+
+command! Psync PackerSync
+command! Pinstall PackerInstall
+command! Pclean PackerClean
+
 command! W w
 command! Q q
 command! WQ wq
