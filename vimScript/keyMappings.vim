@@ -159,6 +159,15 @@ nnoremap <silent> <A-k> :MoveLine(-1)<CR>
 vnoremap <silent> <A-j> :MoveBlock(1)<CR>
 vnoremap <silent> <A-k> :MoveBlock(-1)<CR>
 
+" togle
+nnoremap <F5> :silent setlocal spell! spelllang=en,fr<cr>
+inoremap <F5> <C-o>:silent setlocal spell! spelllang=en,fr<cr>
+
+nnoremap <F6> :setlocal nu!<cr>
+inoremap <F6> <C-o>:setlocal nu!<cr>
+
+nnoremap <F7> :Lexplore<cr>
+inoremap <F7> <C-o>:Lexplore<cr>
 
 
 " Command 
@@ -175,3 +184,6 @@ command! Q q
 command! WQ wq
 command! Wq wq
 command! MyGdb let g:termdebug_wide = 10 | packadd termdebug | Termdebug
+
+" audocmd
+autocmd BufEnter *.txt,*.tex setlocal spell spelllang=en,fr
