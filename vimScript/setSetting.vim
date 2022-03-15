@@ -120,4 +120,4 @@ augroup END
 """"" set numberwidth=1
 """"" set nolazyredraw
 
-set textwidth=60
+" set textwidth=60
