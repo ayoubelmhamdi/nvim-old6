@@ -169,6 +169,10 @@ inoremap <F6> <C-o>:setlocal nu!<cr>
 nnoremap <F7> :Lexplore<cr>
 inoremap <F7> <C-o>:Lexplore<cr>
 
+nnoremap <RightMouse> :silent Evaluate<CR>
+" nnoremap <LeftMouse> :silent Evaluate<cr>
+nnoremap <Space>n :cNext<Cr>
+nnoremap <Space>b :Break<Cr>
 
 " Command 
 command! Telescopefindfiledart lua require("telescope.builtin").find_files({find_command = {"fd","--type","f","-E","*.lock","-E","ios","-E","android","-E","test","-E","build","-E","web","-E","linux","-E","*.png","-E","*.jpg","-E","*.md"}})
@@ -186,4 +190,4 @@ command! Wq wq
 command! MyGdb let g:termdebug_wide = 10 | packadd termdebug | Termdebug
 
 " audocmd
-autocmd BufEnter *.txt,*.tex setlocal spell spelllang=en,fr
+autocmd BufEnter *.txt,*.tex setlocal spell spelllang=fr

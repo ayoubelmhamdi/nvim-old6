@@ -103,6 +103,7 @@ require "ls.ay_efm"
 require("flutter-tools").setup {}
 
 --
+vim.cmd "set guifont=\"JetBrainsMono Nerd Font Mono\""
 vim.cmd "source ~/.config/nvim/lua/vimScript/init.vim"
 
 vim.cmd "au BufRead,BufNewFile *.conf		setfiletype bash"
