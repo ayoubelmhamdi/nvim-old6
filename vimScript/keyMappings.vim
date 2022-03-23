@@ -190,4 +190,8 @@ command! Wq wq
 command! MyGdb let g:termdebug_wide = 10 | packadd termdebug | Termdebug
 
 " audocmd
-autocmd BufEnter *.txt,*.tex setlocal spell spelllang=fr
+autocmd BufEnter *.tex setlocal spell spelllang=fr
+autocmd BufEnter *.txt setlocal spell spelllang=en
+autocmd BufEnter test-ocr.txt setlocal spell spelllang=fr
+au BufEnter *.xsh set syntax=python
+
