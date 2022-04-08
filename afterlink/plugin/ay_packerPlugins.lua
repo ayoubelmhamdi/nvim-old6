@@ -55,7 +55,10 @@ require("packer").startup(function(use)
   use {"ur4ltz/surround.nvim", config = function() require"surround".setup{mappings_style = "sandwich"} end}
 
   -- theme+line
+  --use { "luukvbaal/stabilize.nvim", config = function() require("stabilize").setup() end }
+  use "glepnir/lspsaga.nvim"
   use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
+  use 'folke/tokyonight.nvim'
   use "lukas-reineke/indent-blankline.nvim"
   use "akinsho/nvim-bufferline.lua"
   use "hoob3rt/lualine.nvim"
@@ -68,7 +71,8 @@ require("packer").startup(function(use)
   use "907th/vim-auto-save" -- auto save files like dart
   -- use 'rmagatti/auto-session' -- save session layout
   -- use 'rmagatti/session-lens' -- save session layout with telescope
-  use "tpope/vim-fugitive"
+--use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use "airblade/vim-rooter"
   -- use 'ahmedkhalf/lsp-rooter.nvim' -- chaneg workin directory
   use "tpope/vim-commentary"

@@ -60,8 +60,8 @@ nnoremap <Space>t  :TrainTextObj<cr>
 
 nnoremap <Esc>      :set nohlsearch!<cr>
 nnoremap <Space>ee  :Lexplore<cr>
-nnoremap <Tab>      :bn<cr>
-nnoremap <S-Tab>    :bp<cr>
+nnoremap <Tab>      :tabNext<cr>
+nnoremap <S-Tab>    :bn<cr>
 
 cnoremap <C-A> <Home>
 

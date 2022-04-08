@@ -45,7 +45,8 @@ set expandtab
 set smarttab
 
 set backspace=indent,eol,start
-set colorcolumn=110
+" set colorcolumn=110
+set showtabline=2
 set cursorline
 
 set mouse=a
