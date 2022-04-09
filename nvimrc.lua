@@ -3,10 +3,10 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true
 local cmd = vim.cmd
 
--- local vgit_ok, vgit = pcall(require, "vgit")
--- if not vgit_ok then
---   print "vgit not loading"
--- end
+local comment_ok, comment = pcall(require, "Comment")
+if not comment_ok then
+  print "comment not loading"
+end
 
 local diffviewc_ok, diffviewc = pcall(require, "diffview.config")
 if not diffviewc_ok then
@@ -280,3 +280,28 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     virtual_text = true
   }
 )
+comment.setup {
+    padding = true,
+    sticky = true,
+    ignore = nil,
+    toggler = {
+        line = 'gcc',
+        block = 'gbc',
+    },
+    opleader = {
+        line = 'gc',
+        block = 'gb',
+    },
+    extra = {
+        above = 'gcO',
+        below = 'gco',
+        eol = 'gcA',
+    },
+    mappings = {
+        basic = true,
+        extra = true,
+        extended = false,
+    },
+    pre_hook = nil,
+    post_hook = nil,
+}
