@@ -23,14 +23,6 @@ require("packer").startup(function(use)
   use "tami5/sql.nvim"
   -- use 'nvim-telescope/telescope-project.nvim'
 
-  -- LSP+IDE
-  use "mfussenegger/nvim-dap"
-  use "rcarriga/nvim-dap-ui"
-  use "neovim/nvim-lspconfig"
-  -- use 'hrsh7th/nvim-compe'
-  -- use 'L3MON4D3/LuaSnip'
-  use "stevearc/qf_helper.nvim"
-
   -- nvim-cmp
   use "L3MON4D3/LuaSnip"
   use "hrsh7th/cmp-buffer"
@@ -50,12 +42,21 @@ require("packer").startup(function(use)
 
   -- use "ayoubelmhamdi/friendly-snippets"
 
+  -- LSP+IDE
+  use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
+  use "neovim/nvim-lspconfig"
+  use "stevearc/qf_helper.nvim"
+
+
+
   use "akinsho/flutter-tools.nvim"
   use "windwp/nvim-autopairs"
   use {"ur4ltz/surround.nvim", config = function() require"surround".setup{mappings_style = "sandwich"} end}
 
   -- theme+line
   --use { "luukvbaal/stabilize.nvim", config = function() require("stabilize").setup() end }
+  use "tjdevries/colorbuddy.nvim"
   use "glepnir/lspsaga.nvim"
   use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
   use 'folke/tokyonight.nvim'
@@ -74,8 +75,9 @@ require("packer").startup(function(use)
 --use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use "airblade/vim-rooter"
+  use "numToStr/Comment.nvim"
+  -- use "tpope/vim-commentary"
   -- use 'ahmedkhalf/lsp-rooter.nvim' -- chaneg workin directory
-  use "tpope/vim-commentary"
   -- use 'lewis6991/spellsitter.nvim'
   use "tjdevries/train.nvim"
   -- use 'phaazon/hop.nvim'
