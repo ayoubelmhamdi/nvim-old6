@@ -20,7 +20,7 @@ local todo_comments = Prequire('todo-comments')
 local colorizer = Prequire('colorizer')
 
 Prequire('impatient')
-Prequire('tsp')
+--Prequire('tsp')
 
 ---- setup
 todo_comments.setup {}
