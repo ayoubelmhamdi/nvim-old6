@@ -30,24 +30,24 @@ set nojoinspaces
 set linespace=5
 set clipboard+=unnamedplus
 set inccommand=split " -- Make substitution work in realtime
-set ts=2 " -- Insert 4 spaces for a tab
-set sw=2 " -- Change the number of space characters inserted for indentation
+set ts=4 " -- Insert 4 spaces for a tab
+set sw=4 " -- Change the number of space characters inserted for indentation
 
 
 set nowrap
 set autoindent
 set smartindent
 
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set smarttab
 
 set backspace=indent,eol,start
 " set colorcolumn=110
 set showtabline=2
-set cursorline
+" set cursorline
 
 set mouse=a
 set updatetime=600
