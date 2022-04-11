@@ -1,9 +1,9 @@
 vim.cmd[[
   set completeopt=menu,menuone,noselect
-  set mouse=a
-  set clipboard+=unnamedplus
-  set ts=2 " -- Insert 4 spaces for a tab
-  set sw=2 "
+  " set mouse=a
+  " set clipboard+=unnamedplus
+  " set ts=2 " -- Insert 4 spaces for a tab
+  " set sw=2 "
 ]]
 
 vim.g.mapleader = " "
@@ -12,6 +12,7 @@ vim.opt.termguicolors = true
 local cmp = Prequire("cmp")
 local ls = Prequire("luasnip")
 local lspkind = Prequire("lspkind")
+local types = Prequire("luasnip.util.types")
 
 cmp.setup({
   snippet = {
@@ -51,23 +52,14 @@ cmp.setup({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    -- ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    -- ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    -- ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    -- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    -- ['<C-e>'] = cmp.mapping({
-    --   i = cmp.mapping.abort(),
-    --   c = cmp.mapping.close(),
-    -- }),
-    -- ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   },
   sources = cmp.config.sources({
     { name = 'luasnip' }, -- For luasnip users.
-    --{ name = 'nvim_lsp' },
-    --{ name = 'buffer' },
-    --{ name = 'nvim_lua' },
-    --{ name = 'path' },
-    --{ name = 'tn' },
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+    { name = 'nvim_lua' },
+    { name = 'path' },
+    { name = 'tn' },
   }),
   experimental = {
     native_menu = false,
@@ -98,14 +90,33 @@ _ = vim.cmd [[
 ]]
 
 
+ls.config.set_config({
+	history = true,
+	update_events = "TextChanged,TextChangedI",
+	delete_check_events = "TextChanged",
+	ext_opts = {
+		[types.choiceNode] = {
+			active = {
+				virt_text = { { "choiceNode", "Comment" } },
+			},
+		},
+	},
+	ext_base_prio = 300,
+	ext_prio_increase = 1,
+	enable_autosnippets = true,
+	store_selection_keys = "<Tab>",
+	ft_func = function()
+		return vim.split(vim.bo.filetype, ".", true)
+	end,
+})
 
-vim.keymap.set({ "i", "s" }, "<c-k>", function()
+vim.keymap.set({ "i", "s" }, "<c-j>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   end
 end, { silent = true })
 
-vim.keymap.set({ "i", "s" }, "<c-j>", function()
+vim.keymap.set({ "i", "s" }, "<c-k>", function()
   if ls.jumpable(-1) then
     ls.jump(-1)
   end
@@ -118,4 +129,4 @@ vim.keymap.set("i", "<c-l>", function()
 end)
 
 vim.keymap.set("i", "<c-u>", require "luasnip.extras.select_choice")
-vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
+vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/snip.lua<CR>")
