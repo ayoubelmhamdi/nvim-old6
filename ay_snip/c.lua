@@ -8,14 +8,28 @@ local f = ls.function_node
 local c = ls.choice_node
 local d = ls.dynamic_node
 
+local fmt = Prequire("luasnip.extras.fmt").fmt
+
 
 return  ({
-    s("ma", {
-      t({"int main(int argv, char* argc[]){","}"}),
-    }),
-    s("incc",{
-      t({"#include<"}),
-      i(1,'stdio.h'),
-      t({">"}),
-    }),
+    s("ma", fmt([[
+        int main({}){{
+              {}
+              return 0;
+        }}{}
+        ]],
+        {
+        c(1,{t "int argv, char* argc[]", t ""}),
+        c(2,{t"int ",t""}),
+        i(0),
+        }
+    )),
+   --  s("incc",fmt(
+   --      [[
+   --      #include<{}>
+   --      ]]
+   --      ),{
+   --          c(1,"stdio.h","math.h","string.h")
+   --      }
+   -- ),
 })

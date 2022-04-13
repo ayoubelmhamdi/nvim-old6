@@ -78,5 +78,3 @@ ls.add_snippets("lua", {
     {
     key = "tex",
 })
-
-

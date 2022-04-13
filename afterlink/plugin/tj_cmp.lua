@@ -14,6 +14,16 @@ local ls = Prequire("luasnip")
 local lspkind = Prequire("lspkind")
 local types = Prequire("luasnip.util.types")
 
+local source_mapping = {
+    luasnip = "[snip]",
+    buffer = "[buf]",
+    nvim_lsp = "[LSP]",
+    nvim_lua = "[api]",
+    path = "[path]",
+    gh_issues = "[issues]",
+    cmp_tabnine = "[TabNine]",
+}
+
 cmp.setup({
   snippet = {
       expand = function(args)
@@ -59,7 +69,7 @@ cmp.setup({
     { name = 'buffer' },
     { name = 'nvim_lua' },
     { name = 'path' },
-    { name = 'tn' },
+    { name = 'cmp_tabnine' },
   }),
   experimental = {
     native_menu = false,
@@ -67,19 +77,19 @@ cmp.setup({
   },
 
   formatting = {
-   format = lspkind.cmp_format {
-     with_text = true,
-     menu = {
-       luasnip = "[snip]",
-       buffer = "[buf]",
-       nvim_lsp = "[LSP]",
-       nvim_lua = "[api]",
-       path = "[path]",
-       gh_issues = "[issues]",
-       tn = "[TabNine]",
-     },
-   },
-  },
+      format = function(entry, vim_item)
+                vim_item.kind = lspkind.presets.default[vim_item.kind]
+                local menu = source_mapping[entry.source.name]
+                if entry.source.name == 'cmp_tabnine' then
+                    if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+                        menu = entry.completion_item.data.detail .. ' ' .. menu
+                    end
+                    vim_item.kind = ''
+                end
+                vim_item.menu = menu
+                return vim_item
+            end
+        },
 })
 
 _ = vim.cmd [[
@@ -97,7 +107,7 @@ ls.config.set_config({
 	ext_opts = {
 		[types.choiceNode] = {
 			active = {
-				virt_text = { { "choiceNode", "Comment" } },
+				virt_text = { { "<-- choiceNode", "Comment" } },
 			},
 		},
 	},
@@ -131,4 +141,4 @@ end)
 
 
 vim.keymap.set("i", "<c-u>", require "luasnip.extras.select_choice")
-vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/snip.lua<CR>")
+vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/ay_snip/init.lua<CR>")

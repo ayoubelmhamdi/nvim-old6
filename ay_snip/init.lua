@@ -1,5 +1,6 @@
 local ls = Prequire("luasnip")
 
+
 local function snip_merge(filetype)
   local snipp = Prequire('ay_snip.' .. filetype)
   if snipp == nil then
