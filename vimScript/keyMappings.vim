@@ -82,6 +82,9 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
+nnoremap <C-w><C-s> :vert sbN<cr>
+
+
 nnoremap <C-up> :resize +2<cr>
 nnoremap <C-down> :resize -2<cr>
 nnoremap <C-left> :vertical resize -2<cr>
