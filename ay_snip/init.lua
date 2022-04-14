@@ -11,6 +11,6 @@ local function snip_merge(filetype)
 end
 
 snip_merge('c')
--- -- snip_merge('cpp')
+snip_merge('lua')
 -- -- snip_merge('go')
 -- print("fin")
