@@ -54,10 +54,15 @@ ls.add_snippets("lua", {
         t({ "\\begin{itemize}", "\t\\item " }),
     }),
     s("req", fmt([[
-        local {} = Prequire("{}")]],{f(function(import_name)
-        local parts = vim.split(import_name[1][1],".",true)
-	    return parts[#parts] or ""
-	end,{1}), i(1)}
+        local {} = Prequire("{}")
+        ]],
+        {
+            f(function(import_name)
+                local parts = vim.split(import_name[1][1],".",true)
+                return parts[#parts] or ""
+            end,{1}),
+            i(1)
+        }
     )),
     s("test",fmt(
     [[
