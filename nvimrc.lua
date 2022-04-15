@@ -18,11 +18,11 @@ local diffviewc = Prequire('diffview.config')
 local nvim_treesitter_configs = Prequire('nvim-treesitter.configs')
 local todo_comments = Prequire('todo-comments')
 local colorizer = Prequire('colorizer')
-Prequire("ay_snip")
+-- Prequire("ay_snip")
 
 Prequire('impatient')
 --Prequire('tsp')
-
+Prequire("luasnip.loaders.from_lua").lazy_load()
 ---- setup
 todo_comments.setup {}
 colorizer.setup()
