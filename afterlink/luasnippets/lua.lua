@@ -15,6 +15,16 @@ local fmt = Prequire("luasnip.extras.fmt").fmt
 local m = Prequire("luasnip.extras").m
 local lambda = Prequire("luasnip.extras").l
 
+local function opts(ss)
+    local ext_opts = {
+        active = {
+            virt_text = { { ss, "GruvboxBlue" } },
+        },
+    }
+    local node_ext_opts = {node_ext_opts = ext_opts}
+    return node_ext_opts
+end
+
 local function c(pos, choices, opts)
     if opts then
         opts.restore_cursor = true
@@ -66,31 +76,29 @@ local function simple_restore(args, _)
     return sn(nil, { i(1, args[1]), r(2, "dyn", i(nil, "user_text")) })
 end
 
+
 return {
-    s("trig3", {
+    s("kkk", {
+        i(1, "text1", opts("111")),
+        i(2, "text2", opts("222")),
+    }),
+    s("ooo", {
         i(1),
         t ":",
         i(2),
         t "::",
-        m(
-            { 1, 2 },
-            lambda._1:match("^" .. lambda._2 .. "$"),
-            lambda._1:gsub("a", "e")
-        ),
+        m({ 1, 2 }, lambda._1:match("^" .. lambda._2 .. "$"), lambda._1:gsub("a", "e")),
     }),
     s("trig2", {
         i(1),
         c(2, {
-            sn(
-                nil,
-                {
-                    i(1),
-                    t "can access the argnode :)",
-                    f(function(args)
-                        return args[1]
-                    end, ai[1]),
-                }
-            ),
+            sn(nil, {
+                i(1),
+                t "can access the argnode :)",
+                f(function(args)
+                    return args[1]
+                end, ai[1]),
+            }),
             t "sample_text",
         }),
     }),
