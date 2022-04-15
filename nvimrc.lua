@@ -21,8 +21,8 @@ local colorizer = Prequire('colorizer')
 -- Prequire("ay_snip")
 
 Prequire('impatient')
---Prequire('tsp')
 Prequire("luasnip.loaders.from_lua").lazy_load()
+--Prequire('tsp')
 ---- setup
 todo_comments.setup {}
 colorizer.setup()
