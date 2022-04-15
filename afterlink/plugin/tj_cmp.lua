@@ -140,5 +140,4 @@ end)
 
 
 
-vim.keymap.set("i", "<c-u>", require "luasnip.extras.select_choice")
-vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/ay_snip/lua.lua<CR>")
+vim.keymap.set("i", "<c-u>", Prequire "luasnip.extras.select_choice")
