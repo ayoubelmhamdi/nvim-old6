@@ -20,6 +20,7 @@ require("packer").startup(function(use)
   use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
   use "kyazdani42/nvim-web-devicons"
   use "tami5/sql.nvim"
+  use "nvim-lua/lsp-status.nvim"
   -- use "nvim-telescope/telescope-frecency.nvim"
   -- use 'nvim-telescope/telescope-project.nvim'
 
@@ -60,14 +61,12 @@ require("packer").startup(function(use)
   --use { "luukvbaal/stabilize.nvim", config = function() require("stabilize").setup() end }
   use "tjdevries/colorbuddy.nvim"
   use "glepnir/lspsaga.nvim"
-  use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
-  use 'folke/tokyonight.nvim'
+  use "ellisonleao/gruvbox.nvim"
   use "lukas-reineke/indent-blankline.nvim"
-  use "akinsho/nvim-bufferline.lua"
-  use "hoob3rt/lualine.nvim"
+  use 'nvim-lualine/lualine.nvim'
+  -- use "akinsho/nvim-bufferline.lua"
   -- use 'wfxr/minimap.vim'
   -- use 'nanozuki/tabby.nvim'
-  -- use 'romgrk/barbar.nvim'
   use "aspeddro/slides.nvim"
 
   -- Misc
@@ -75,6 +74,7 @@ require("packer").startup(function(use)
   -- use 'rmagatti/auto-session' -- save session layout
   -- use 'rmagatti/session-lens' -- save session layout with telescope
 --use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use "airblade/vim-rooter"
   use "numToStr/Comment.nvim"
