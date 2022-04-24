@@ -1,3 +1,7 @@
+" terminal
+noremap <S-tab> <C-\><C-n>:bNext<cr>
+tnoremap <Esc><Esc> <C-\><C-n><Esc>
+
 " LSP
 nnoremap <Space>ca  <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <Space>rn  <cmd>lua vim.lsp.buf.rename()<CR>
@@ -39,7 +43,9 @@ nnoremap     <M-m>    <cmd>lua require('nvPlugins.mytelescope').gl()<cr>
 nnoremap <Space>o     :Telescopefy<cr>
 nnoremap <Space>fg    <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <Space>f     <cmd>lua require('telescope.builtin').find_files({ find_command = { 'fd','--type','file'}})  <cr>
+nnoremap    <C-f>     <cmd>lua require('telescope.builtin').find_files({ find_command = { 'fd','--type','file'}})  <cr>
 nnoremap <Space>fb    <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <C-Space><C-b>    <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <Space>fh    <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <Space>fs    :Telescope current_buffer_fuzzy_find<cr>
 
@@ -103,7 +109,7 @@ nnoremap gn :tabnew<CR>
 nnoremap s <Nop>
 nnoremap Y y$
 nnoremap V V$h
-nnoremap <C-q> :noautocmd q<cr>
+nnoremap <C-q> :noautocmd bd<cr>
 nnoremap <C-s> :wq<cr>
 nnoremap <Space>w :w<cr>
 inoremap <C-space><C-space> <esc>

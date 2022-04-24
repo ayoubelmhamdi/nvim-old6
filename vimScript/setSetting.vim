@@ -50,7 +50,7 @@ set showtabline=2
 " set cursorline
 
 set mouse=a
-set updatetime=600
+set updatetime=300
 set wildignore+=*.o,*.obj,.git,*.pyc
 
 
