@@ -1,5 +1,6 @@
-local action_state = require "telescope.actions.state"
-require("telescope").setup {
+local action_state = Prequire "telescope.actions.state"
+local tsp = Prequire("telescope")
+tsp.setup {
   defaults = {
     -- vimgrep_arguments = {'fd'},
     -- find_command = {'fad'},
@@ -70,6 +71,6 @@ require("telescope").setup {
 -- if load 'avant' telescope config
 -- this plugin will not detected by telecsope correctly
 -- so i cant't use ignore file or use smaret case ...
-require("telescope").load_extension "fzf"
-require("telescope").load_extension "frecency"
-require("telescope").load_extension "neoclip"
+Prequire("telescope").load_extension("fzf")
+-- Prequire("telescope").load_extension("frecency")
+-- Prequire("telescope").load_extension("neoclip")
