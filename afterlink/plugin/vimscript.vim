@@ -17,7 +17,6 @@ augroup end
 
 
 set guifont=FiraCode\ Nerd\ Font:h9
-source ~/.config/nvim/lua/vimScript/init.vim
 " TODO to lua for mprove sturtup 
 au BufRead,BufNewFile *.conf		setfiletype bash
 au BufRead,BufNewFile *.fish		setfiletype fish
