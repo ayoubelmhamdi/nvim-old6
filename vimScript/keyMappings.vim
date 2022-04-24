@@ -110,6 +110,7 @@ nnoremap s <Nop>
 nnoremap Y y$
 nnoremap V V$h
 nnoremap <C-q> :noautocmd bd<cr>
+nnoremap <C-q><C-q> :noautocmd q<cr>
 nnoremap <C-s> :wq<cr>
 nnoremap <Space>w :w<cr>
 inoremap <C-space><C-space> <esc>

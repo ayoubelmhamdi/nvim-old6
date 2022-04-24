@@ -104,6 +104,7 @@ require("packer").startup(function(use)
   use "fedepujol/move.nvim"
   use "tamton-aquib/essentials.nvim"
   -- test
+  use "henriquehbr/nvim-startup.lua"
   use "nathom/filetype.nvim"
   use "max397574/better-escape.nvim"
   use "norcalli/nvim-colorizer.lua"
