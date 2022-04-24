@@ -42,8 +42,8 @@ autocmd TermOpen * setlocal nonu nornu | startinsert
 nnoremap     <M-m>    <cmd>lua require('nvPlugins.mytelescope').gl()<cr>
 nnoremap <Space>o     :Telescopefy<cr>
 nnoremap <Space>fg    <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <Space>f     <cmd>lua require('telescope.builtin').find_files({ find_command = { 'fd','--type','file'}})  <cr>
-nnoremap    <C-f>     <cmd>lua require('telescope.builtin').find_files({ find_command = { 'fd','--type','file'}})  <cr>
+nnoremap <Space>f     <cmd>lua require('telescope.builtin').find_files({ find_command = { 'fd','-tf','-tl'}})  <cr>
+nnoremap    <C-f>     <cmd>lua require('telescope.builtin').find_files({ find_command = { 'fd','-tf','-tl'}})  <cr>
 nnoremap <Space>fb    <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <C-Space><C-b>    <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <Space>fh    <cmd>lua require('telescope.builtin').help_tags()<cr>
