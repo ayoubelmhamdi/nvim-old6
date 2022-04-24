@@ -136,32 +136,56 @@ local function bash(args, command)
     return res
 end
 
+local main_args = function(position)
+    return d(position, function()
+        local nodes = {}
+        table.insert(nodes, t "--")
+
+        local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+        for _, line in ipairs(lines) do
+            if line:match("ma2") then
+                table.insert(nodes, t "--> one")
+                break
+            end
+        end
+
+            return sn(nil, c(1, nodes, opts "main <--"))
+    end, {})
+end
 
 
 return {
     s(
-        "begin",
-        fmta(
+        "ma2",
+        fmt(
             [[
-            \begin{<1><2>}
-                <3>
-            \end{<4><5>}
-            ]],
+        int main({}){{
+            {}
+            return 0;
+        }}{}
+        ]],
             {
-                -- i(3),
-                c(1, {
-                    i(nil, ""),
-                    t "equation",
-                    t "String",
-                    t "char",
-                    t "int",
-                    t "double",
-                    t "boolean",
-                }, opts "6:(...., equation, String, char, int, double, boolean)"),
-                c(2, { t "", t "*" }, opts "2:(... , *)"),
-                i(3),
-                rep(1),
-                rep(2),
+                main_args(1),
+                -- c(1, { t "int argv, char* argc[]", t "" }, opts "main<--"),
+                c(2, {
+                    fmt([[string {};]], { i(1) }),
+                    fmt([[int {}{}{};]], {
+                        i(1),
+                        c(2, {
+                            fmt("{}",
+                                {
+                                    c(1, { t "", t "i", t "i,j", t "i,j,k" }),
+                                }
+                            ),
+                        }),
+                        c(3, {
+                            fmt("[{}]", { i(1) }),
+                            fmt("{}", { i(1) }),
+                        }),
+                    }),
+                    fmt([[{};]], { i(1) }),
+                }, opts "var a;<--"),
+                i(0),
             }
         )
     ),
