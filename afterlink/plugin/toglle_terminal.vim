@@ -11,7 +11,7 @@ function! MonkeyTerminalOpen()
     " Creates a window call monkey_terminal
     new monkey_terminal
     " Moves to the window the right the current one
-    wincmd L
+    wincmd B
     let s:monkey_terminal_job_id = termopen($SHELL, { 'detach': 1 })
 
      " Change the name of the buffer to "Terminal 1"
@@ -27,7 +27,7 @@ function! MonkeyTerminalOpen()
     if !win_gotoid(s:monkey_terminal_window)
     sp
     " Moves to the window below the current one
-    wincmd L   
+    wincmd B   
     buffer Terminal\ 1
      " Gets the id of the terminal window
      let s:monkey_terminal_window = win_getid()
@@ -62,7 +62,7 @@ function! MonkeyTerminalExec(cmd)
   " run cmd
   call jobsend(s:monkey_terminal_job_id, a:cmd . "\n")
   normal! G
-  wincmd L
+  wincmd B
 
   startinsert
 endfunction
