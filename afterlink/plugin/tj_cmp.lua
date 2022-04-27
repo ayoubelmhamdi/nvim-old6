@@ -22,6 +22,7 @@ local source_mapping = {
     path = "[path]",
     gh_issues = "[issues]",
     cmp_tabnine = "[TabNine]",
+    latex_symbols = "symbol",
 }
 
 cmp.setup({
@@ -57,6 +58,8 @@ cmp.setup({
                     end,
                   },
     ["<tab>"] = cmp.config.disable,
+    ["<down>"] = cmp.config.disable,
+    ["<up>"] = cmp.config.disable,
     -- Testing
     ["<c-q>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
@@ -92,13 +95,19 @@ cmp.setup({
         },
 })
 
+-- TODO to lua
 _ = vim.cmd [[
   augroup CmpFish
     au!
-    autocmd Filetype fish lua require'cmp'.setup.buffer { sources = { { name = "fish" }, } }
+    autocmd Filetype fish lua Prequire'cmp'.setup.buffer { sources = { { name = "fish" }, } }
   augroup END
 ]]
-
+-- vim.cmd [[
+--   augroup CmpTex
+--     au!
+--     autocmd Filetype tex lua Prequire'cmp'.setup.buffer { sources = { { name = "latex_symbols" }, } }
+--   augroup END
+-- ]]
 
 ls.config.set_config({
 	history = true,

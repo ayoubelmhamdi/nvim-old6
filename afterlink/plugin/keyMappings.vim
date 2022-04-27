@@ -176,8 +176,7 @@ inoremap <F5> <C-o>:silent setlocal spell! spelllang=en,fr<cr>
 nnoremap <F6> :setlocal nu!<cr>
 inoremap <F6> <C-o>:setlocal nu!<cr>
 
-nnoremap <F7> :Lexplore<cr>
-inoremap <F7> <C-o>:Lexplore<cr>
+nnoremap <F3> :Lexplore<cr>
 
 nnoremap <RightMouse> :silent Evaluate<CR>
 " nnoremap <LeftMouse> :silent Evaluate<cr>
@@ -198,6 +197,10 @@ command! Q q
 command! WQ wq
 command! Wq wq
 command! MyGdb let g:termdebug_wide = 10 | packadd termdebug | Termdebug
+nnoremap <F7> :FloatermToggle<cr>
+nnoremap <F8> :silent FloatermSend           ./xbar<cr>:FloatermShow<cr>
+tnoremap <F8> <c-\><c-n>:silent FloatermSend ./xbar<cr>:FloatermShow<cr>
+tnoremap <F7> <c-\><c-n>:FloatermToggle<cr>
 
 " audocmd
 autocmd BufEnter *.tex setlocal spell spelllang=fr
@@ -205,3 +208,8 @@ autocmd BufEnter *.txt setlocal spell spelllang=en
 autocmd BufEnter test-ocr.txt setlocal spell spelllang=fr
 au BufEnter *.xsh set syntax=python
 
+inoremap <up> <c-o>k
+inoremap <down> <c-o>j
+inoremap <M-w> <c-o>w
+inoremap <M-b> <c-o>b
+inoremap <M-e> <c-o>e

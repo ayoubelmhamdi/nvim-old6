@@ -1,3 +1,4 @@
+finish
 " With this function you can reuse the same terminal in neovim.
 " You can toggle the terminal and also send a command to the same terminal.
 
