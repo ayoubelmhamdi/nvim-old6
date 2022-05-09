@@ -96,7 +96,10 @@ nnoremap <C-down> :resize -2<cr>
 nnoremap <C-left> :vertical resize -2<cr>
 nnoremap <C-right> :vertical resize +2<cr>
 
-
+tnoremap <C-up>    <C-\><C-N>:resize +2<cr>
+tnoremap <C-down>  <C-\><C-N>:resize -2<cr>
+tnoremap <C-left>  <C-\><C-N>:vertical resize -2<cr>
+tnoremap <C-right> <C-\><C-N>:vertical resize +2<cr>
 
 "Basic file system commands
 nnoremap <A-o> :!touch<Space>
@@ -198,9 +201,12 @@ command! WQ wq
 command! Wq wq
 command! MyGdb let g:termdebug_wide = 10 | packadd termdebug | Termdebug
 nnoremap <F7> :FloatermToggle<cr>
-nnoremap <F8> :silent FloatermSend           ./xbar<cr>:FloatermShow<cr>
-tnoremap <F8> <c-\><c-n>:silent FloatermSend ./xbar<cr>:FloatermShow<cr>
+nnoremap <F8> :silent FloatermSend           tail_latexmk<cr>:FloatermShow<cr>
+tnoremap <F8> <c-\><c-n>:silent FloatermSend tail_latexmk<cr>:FloatermShow<cr>
 tnoremap <F7> <c-\><c-n>:FloatermToggle<cr>
+let g:floaterm_height=0.8
+let g:floaterm_width=0.8
+" let g:floaterm_wintype="vsplit"
 
 " audocmd
 autocmd BufEnter *.tex setlocal spell spelllang=fr
