@@ -181,7 +181,7 @@ inoremap <F6> <C-o>:setlocal nu!<cr>
 
 nnoremap <F3> :Lexplore<cr>
 
-nnoremap <RightMouse> :silent Evaluate<CR>
+" nnoremap <RightMouse> :silent Evaluate<CR>
 " nnoremap <LeftMouse> :silent Evaluate<cr>
 nnoremap <Space>n :cNext<Cr>
 nnoremap <Space>b :Break<Cr>

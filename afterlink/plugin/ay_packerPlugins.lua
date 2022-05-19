@@ -36,7 +36,7 @@ require("packer").startup(function(use)
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-path"
-  use "kdheepak/cmp-latex-symbols"
+  -- use "kdheepak/cmp-latex-symbols"
   use "octaltree/cmp-look"
   use "f3fora/cmp-spell"
   -- use 'uga-rosa/cmp-user_dictionary'

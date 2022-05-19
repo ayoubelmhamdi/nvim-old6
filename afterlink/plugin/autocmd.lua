@@ -1,21 +1,13 @@
-vim.cmd[[
-	function! SomeCheck()
-	   if filereadable("/tmp/flutter.pid")
-	       !kill -USR1 $(cat /tmp/flutter.pid)
-	   endif
-	endfunction
-]]
-
-vim.api.nvim_create_autocmd({"BufWinEnter"}, {
-  pattern = {"*.c","*.lua", "*.h"},
+vim.api.nvim_create_autocmd({"InsertLeave", "TextChanged"}, {
+  pattern = {"*.tex", "*.c", "*.lua", "*.h", "*.dart"},
   callback = function ()
       vim.b.auto_save = 1
-  end  ,  -- Or myvimfun
+  end  ,
 })
 
 vim.api.nvim_create_autocmd({"InsertLeave", "TextChanged"}, {
   pattern = {"*.dart"},
   callback = function ()
-      vim.b.auto_save = 1
-  end  ,  -- Or myvimfun
+    os.execute('kill -USR1 $(cat /tmp/flutter.pid)')
+  end  ,
 })
