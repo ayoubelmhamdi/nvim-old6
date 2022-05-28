@@ -83,6 +83,8 @@ nnoremap <silent> <Space>fp :FlutterPubGet<cr>
 " nnoremap <silent> <Space>ft :FlutterRestart<cr>
 " nnoremap <silent> <Space>fq :FlutterQuit<cr>
 
+inoremap <M-L> <C-K>
+
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
@@ -114,7 +116,7 @@ nnoremap Y y$
 nnoremap V V$h
 nnoremap <C-q> :noautocmd bd<cr>
 nnoremap <C-q><C-q> :noautocmd q<cr>
-nnoremap <C-s> :wq<cr>
+nnoremap <C-s> :w<cr>
 nnoremap <Space>w :w<cr>
 inoremap <C-space><C-space> <esc>
 
