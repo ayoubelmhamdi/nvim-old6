@@ -110,7 +110,7 @@ _ = vim.cmd [[
 -- ]]
 
 ls.config.set_config({
-	history = true,
+	history = false,
 	update_events = "TextChanged,TextChangedI",
 	delete_check_events = "TextChanged",
 	ext_opts = {
