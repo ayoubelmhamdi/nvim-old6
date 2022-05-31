@@ -8,6 +8,6 @@ vim.api.nvim_create_autocmd({"InsertLeave", "TextChanged"}, {
 vim.api.nvim_create_autocmd({"InsertLeave", "TextChanged"}, {
   pattern = {"*.dart"},
   callback = function ()
-    os.execute('kill -USR1 $(cat /tmp/flutter.pid >/dev/null 2>&1) >/dev/null 2>&1')
+    os.execute('killflutter')
   end  ,
 })
