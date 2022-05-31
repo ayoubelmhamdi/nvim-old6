@@ -3,7 +3,7 @@
 --   map_complete = true -- it will auto insert `(` after select function or method item
 -- })
 
-require("nvim-autopairs").setup()
+Prequire("nvim-autopairs").setup()
 
 -- local disable_filetype = { "TelescopePrompt" }
 -- local ignored_next_char = string.gsub([[ [%w%%%'%[%"%.] ]],"%s+", "")
