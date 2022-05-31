@@ -122,8 +122,9 @@ inoremap <C-space><C-space> <esc>
 
 
 " Alias replace all to
-nnoremap <M-s> :s#\<<C-r>=expand("<cword>")<CR>\>#<C-r>=expand("<cword>")<CR> 
 vnoremap <C-r> "hy:%s/<C-r>h/
+nnoremap <M-s> :s#<c-r><c-w>#<c-r><c-w>#g<left><left>
+" nnoremap <M-s> :s#\<<C-r>=expand("<cword>")<CR>\>#<C-r>=expand("<cword>")<CR> 
  
 " Prevent x from overriding what's in the clipboard.
 " use this tow symbole "_ after motion, 
@@ -219,3 +220,13 @@ inoremap <down> <c-o>j
 inoremap <M-w> <c-o>w
 inoremap <M-b> <c-o>b
 inoremap <M-e> <c-o>e
+
+inoremap <S-CR> <C-O>o
+inoremap <C-CR> <C-O>O
+
+" Clears hlsearch after doing a search, otherwise just does normal <CR> stuff
+nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
+
+
+" grep hightlite
+nnoremap <leader>sh <cmd>TSHighlightCapturesUnderCursor<CR>
