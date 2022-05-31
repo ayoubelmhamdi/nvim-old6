@@ -43,7 +43,7 @@ nnoremap     <M-m>    <cmd>lua require('nvPlugins.mytelescope').gl()<cr>
 nnoremap <Space>o     :Telescopefy<cr>
 nnoremap <Space>fg    <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <Space>f     <cmd>lua require('telescope.builtin').find_files({ find_command = { 'fd','-tf','-tl'}})  <cr>
-nnoremap    <C-f>     <cmd>lua require('telescope.builtin').find_files({ find_command = { 'fd','-tf','-tl'}})  <cr>
+nnoremap    <C-f>     :Telescopefindfiledart<cr>
 nnoremap <Space>fb    <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <C-Space><C-b>    <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <Space>fh    <cmd>lua require('telescope.builtin').help_tags()<cr>
@@ -189,13 +189,11 @@ nnoremap <Space>n :cNext<Cr>
 nnoremap <Space>b :Break<Cr>
 
 " Command 
-command! Telescopefindfiledart lua require("telescope.builtin").find_files({find_command = {"fd","--type","f","-E","*.lock","-E","ios","-E","android","-E","test","-E","build","-E","web","-E","linux","-E","*.png","-E","*.jpg","-E","*.md"}})
+command! Telescopefindfiledart lua require("telescope.builtin").find_files({find_command = {"fd","--type","f","-E","*.lock","-E","ios","-E","android","-E","build","-E","web","-E","linux","-E","macos","-E","windows","-E","*.png","-E","*.jpg","-E","*.md"}})
 command! Telescopefy Telescope frecency default_text=:CWD: 
 command! Reloader lua require('telescope').reloader()
 
-command! Psync PackerSync
-command! Pinstall PackerInstall
-command! Pclean PackerClean
+command! Ps PackerSync
 
 command! W w
 command! Q q
