@@ -31,22 +31,13 @@ local function opts(ss)
     local node_ext_opts = { node_ext_opts = ext_opts }
     return node_ext_opts
 end
-
 return {
     s(
-        "ma",
+       "StatelessWidget",
         fmt(
-            [[
-        import 'package:flutter/material.dart';
-         
-        void main() => runApp(
-          const MaterialApp(
-            home:{}(),
-          ),
-        );
-         
+        [[
         class {} extends StatelessWidget {{
-          const MyApp({{Key? key}}) : super(key: key);
+          const {}({{Key? key}}) : super(key: key);
 
           @override
           Widget build(BuildContext context) {{
@@ -56,7 +47,7 @@ return {
                 ),
                 body: Column(
                   children: const <Widget>[
-                      {}, 
+                      {},
                     ],
                 ),
             );
@@ -71,27 +62,39 @@ return {
         )
     ),
     s(
-        "maa",
+        "ma",
         fmt(
             [[
-        int main({}){{
-              {}
-              return 0;
-        }}{}
+        import 'package:flutter/material.dart';
+        
+        void main() => runApp(
+          const MaterialApp(
+            home:{}(),
+          ),
+        );
+        
+        class {} extends StatelessWidget {{
+          const MyApp({{Key? key}}) : super(key: key);
+
+          @override
+          Widget build(BuildContext context) {{
+            return Scaffold(
+                appBar: AppBar(
+                  title: const Text('Material App Bar'),
+                ),
+                body: Column(
+                  children: const <Widget>[
+                      {},
+                    ],
+                ),
+            );
+          }}
+        }}
         ]],
             {
-                c(1, { t "int argv, char* argc[]", t "" }),
-                c(2, {
-                    sn(nil, { t "string ", r(1, "user_text"), t ";" }),
-                    sn(nil, { t "int ", r(1, "user_text"), t ";" }),
-                    sn(nil, { t "", r(1, "user_text") }),
-                }),
-                i(0),
-            },
-            {
-                stored = {
-                    user_text = i(2, "default_text"),
-                },
+                c(1, { t "MyApp", t "" }),
+                rep(1),
+                c(2,{t"Text('Hello World')",t""}),
             }
         )
     ),
