@@ -21,7 +21,7 @@ local source_mapping = {
     nvim_lua = "[api]",
     path = "[path]",
     gh_issues = "[issues]",
-    cmp_tabnine = "[TabNine]",
+    -- cmp_tabnine = "[TabNine]",
     latex_symbols = "symbol",
 }
 
