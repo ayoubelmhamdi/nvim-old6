@@ -156,7 +156,7 @@ end
 
 return {
     s(
-        "ma2",
+        "ma3",
         fmt(
             [[
         int main({}){{
