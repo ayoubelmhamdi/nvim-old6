@@ -65,11 +65,11 @@ cmp.setup({
     },
   },
   sources = cmp.config.sources({
-    { name = 'luasnip' }, -- For luasnip users.
+    { name = 'luasnip', priority=100 }, -- For luasnip users.
+    { name = 'path' },
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'nvim_lua' },
-    { name = 'path' },
     { name = 'cmp_tabnine' },
   }),
   experimental = {
