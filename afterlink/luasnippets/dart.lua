@@ -33,9 +33,9 @@ local function opts(ss)
 end
 return {
     s(
-       "StatelessWidget",
+        "StatelessWidget",
         fmt(
-        [[
+            [[
         class {} extends StatelessWidget {{
           const {}({{Key? key}}) : super(key: key);
 
@@ -57,7 +57,7 @@ return {
             {
                 c(1, { t "MyApp", t "" }),
                 rep(1),
-                c(2,{t"Text('Hello World')",t""}),
+                c(2, { t "Text('Hello World')", t "" }),
             }
         )
     ),
@@ -94,24 +94,7 @@ return {
             {
                 c(1, { t "MyApp", t "" }),
                 rep(1),
-                c(2,{t"Text('Hello World')",t""}),
-            }
-        )
-    ),
-    s(
-        "incc",
-        fmt(
-            [[
-       #include{}
-      ]],
-            {
-                c(1, {
-                    sn(nil, { t "<stdio", r(1, "user_text"), t ".h>" }),
-                    sn(nil, { t "<math", r(1, "user_text"), t ".h>" }),
-                    sn(nil, { t "<string", r(1, "user_text"), t ".h>" }),
-                    sn(nil, { t "<", r(1, "user_text"), t ".h>" }),
-                    sn(nil, { t '"', r(1, "user_text"), t '.h"' }),
-                }),
+                c(2, { t "Text('Hello World')", t "" }),
             }
         )
     ),
