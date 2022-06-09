@@ -176,11 +176,9 @@ vnoremap <silent> <A-j> :MoveBlock(1)<CR>
 vnoremap <silent> <A-k> :MoveBlock(-1)<CR>
 
 " togle
-nnoremap <F5> :silent setlocal spell! spelllang=en,fr<cr>
-inoremap <F5> <C-o>:silent setlocal spell! spelllang=en,fr<cr>
+nnoremap <F6> :setlocal! spell! spelllang=en,fr<cr>
 
-nnoremap <F6> :setlocal nu!<cr>
-inoremap <F6> <C-o>:setlocal nu!<cr>
+nnoremap <F1> :setlocal nu!<cr>
 
 nnoremap <F3> :Lexplore<cr>
 
