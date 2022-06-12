@@ -21,6 +21,7 @@ require("packer").startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "tami5/sql.nvim"
   use "nvim-lua/lsp-status.nvim"
+  use "jose-elias-alvarez/null-ls.nvim"
   -- use "nvim-telescope/telescope-frecency.nvim"
   -- use 'nvim-telescope/telescope-project.nvim'
 
@@ -48,6 +49,8 @@ require("packer").startup(function(use)
   -- LSP+IDE
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
+  use "theHamsta/nvim-dap-virtual-text"
+  use 'leoluz/nvim-dap-go'
   use "neovim/nvim-lspconfig"
   use "stevearc/qf_helper.nvim"
 
@@ -55,7 +58,7 @@ require("packer").startup(function(use)
 
   use "akinsho/flutter-tools.nvim"
   use "windwp/nvim-autopairs"
-  use {"ur4ltz/surround.nvim", config = function() require"surround".setup{mappings_style = "sandwich"} end}
+  use {"ur4ltz/surround.nvim", config = function() Prequire"surround".setup{mappings_style = "sandwich"} end}
 
   -- theme+line
   --use { "luukvbaal/stabilize.nvim", config = function() require("stabilize").setup() end }
@@ -74,8 +77,9 @@ require("packer").startup(function(use)
   -- use 'rmagatti/auto-session' -- save session layout
   -- use 'rmagatti/session-lens' -- save session layout with telescope
 --use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use "TimUntersberger/neogit"
+  use "lewis6991/gitsigns.nvim"
+  use "sindrets/diffview.nvim"
   use "airblade/vim-rooter"
   use "numToStr/Comment.nvim"
   -- use "tpope/vim-commentary"
@@ -89,6 +93,7 @@ require("packer").startup(function(use)
   -- select funcion
   -- by treesitter
   use "David-Kunz/treesitter-unit"
+  use "lewis6991/spellsitter.nvim"
   -- by vimscript
   -- use 'kana/vim-textobj-user'
   -- use 'kamichidu/vim-textobj-function-go'
