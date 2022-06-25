@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.opt.termguicolors = true
 vim.o.background = "dark"
-vim.cmd('colorscheme gruvbox')
+vim.cmd "colorscheme gruvbox"
 
 function Prequire(...)
     local status, lib = pcall(require, ...)
@@ -15,14 +15,32 @@ end
 
 Prequire "impatient"
 
-
 -- Switch between tabs
 vim.keymap.set("n", "<Right>", function()
-  vim.cmd [[checktime]]
-  vim.api.nvim_feedkeys("gt", "n", true)
+    vim.cmd [[checktime]]
+    vim.api.nvim_feedkeys("gt", "n", true)
 end)
 
 vim.keymap.set("n", "<Left>", function()
-  vim.cmd [[checktime]]
-  vim.api.nvim_feedkeys("gT", "n", true)
+    vim.cmd [[checktime]]
+    vim.api.nvim_feedkeys("gT", "n", true)
 end)
+
+-- tlggle betwin fr and ang and non
+-- " nnoremap <F6> :setlocal! spell! spelllang=en,fr<cr>
+
+-- X = 0
+-- vim.keymap.set("n", "<F6>", function()
+--     if X == 0 then
+--         vim.cmd [[ nnoremap <F6> :setlocal! spell spelllang=en<cr> ]]
+--                     call nvim_feedkeys(key, 'n', v:false)
+--
+--         X = 1
+--     elseif X == 1 then
+--         vim.cmd [[ nnoremap <F6> :setlocal! spell spelllang=fr<cr> ]]
+--         X = 2
+--     else
+--         vim.cmd [[ nnoremap <F6> :setlocal! nospell<cr> ]]
+--         X = 0
+--     end
+-- end)
