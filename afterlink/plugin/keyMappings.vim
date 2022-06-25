@@ -176,16 +176,16 @@ vnoremap <silent> <A-j> :MoveBlock(1)<CR>
 vnoremap <silent> <A-k> :MoveBlock(-1)<CR>
 
 " togle
-nnoremap <F6> :setlocal! spell! spelllang=en,fr<cr>
+" nnoremap <F6> :setlocal! spell! spelllang=en,fr<cr>
 
-nnoremap <F1> :setlocal nu!<cr>
+" nnoremap <F1> :setlocal nu!<cr>
 
-nnoremap <F3> :Lexplore<cr>
+" nnoremap <F3> :Lexplore<cr>
 
 " nnoremap <RightMouse> :silent Evaluate<CR>
 " nnoremap <LeftMouse> :silent Evaluate<cr>
-nnoremap <Space>n :cNext<Cr>
-nnoremap <Space>b :Break<Cr>
+" nnoremap <Space>n :cNext<Cr>
+" nnoremap <Space>b :Break<Cr>
 
 " Command 
 command! Telescopefindfiledart lua require("telescope.builtin").find_files({find_command = {"fd","--type","f","-E","*.lock","-E","ios","-E","android","-E","build","-E","web","-E","linux","-E","macos","-E","windows","-E","*.png","-E","*.jpg","-E","*.md"}})
@@ -196,6 +196,8 @@ command! Ps PackerSync
 
 command! W w
 command! Q q
+command! Qa qa
+command! QA qa
 command! WQ wq
 command! Wq wq
 command! MyGdb let g:termdebug_wide = 10 | packadd termdebug | Termdebug
