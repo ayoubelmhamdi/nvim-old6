@@ -64,7 +64,7 @@ nnoremap <Space>tl :TrainUpDown<cr>
 nnoremap <Space>tw :TrainWord<cr>
 nnoremap <Space>t  :TrainTextObj<cr>
 
-nnoremap <Esc>      :set nohlsearch<cr>
+" nnoremap <Esc>      :set nohlsearch<cr>
 nnoremap <Space>ee  :Lexplore<cr>
 nnoremap <Tab>      :tabNext<cr>
 nnoremap <S-Tab>    :bn<cr>
