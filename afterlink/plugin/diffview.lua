@@ -1,8 +1,9 @@
-local actions = require("diffview.actions")
+local actions = Prequire("diffview.actions")
 
 Prequire("diffview").setup({
   diff_binaries = false,    -- Show diffs for binaries
   enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
+  git_cmd = { "git" },      -- The git executable followed by default args.
   use_icons = true,         -- Requires nvim-web-devicons
   icons = {                 -- Only applies when use_icons is true.
     folder_closed = "",
@@ -13,7 +14,7 @@ Prequire("diffview").setup({
     fold_open = "",
   },
   file_panel = {
-    listing_style = "list",             -- One of 'list' or 'tree'
+    listing_style = "tree",             -- One of 'list' or 'tree'
     tree_options = {                    -- Only applies when listing_style is 'tree'
       flatten_dirs = true,              -- Flatten dirs that only contain one single dir
       folder_statuses = "only_folded",  -- One of 'never', 'only_folded' or 'always'.
@@ -24,15 +25,15 @@ Prequire("diffview").setup({
     },
   },
   file_history_panel = {
-    log_options = {
-      max_count = 256,      -- Limit the number of commits
-      follow = false,       -- Follow renames (only for single file)
-      all = false,          -- Include all refs under 'refs/' including HEAD
-      merges = false,       -- List only merge commits
-      no_merges = false,    -- List no merge commits
-      reverse = false,      -- List commits in reverse order
+    log_options = {   -- See ':h diffview-config-log_options'
+      single_file = {
+        diff_merges = "combined",
+      },
+      multi_file = {
+        diff_merges = "first-parent",
+      },
     },
-    win_config = {          -- See ':h diffview-config-win_config'
+    win_config = {    -- See ':h diffview-config-win_config'
       position = "bottom",
       height = 16,
     },
@@ -52,7 +53,7 @@ Prequire("diffview").setup({
       -- tabpage is a Diffview.
       ["<tab>"]      = actions.select_next_entry, -- Open the diff for the next file
       ["<s-tab>"]    = actions.select_prev_entry, -- Open the diff for the previous file
-      ["gf"]         = actions.goto_file,         -- Open the file in a new split in previous tabpage
+      ["gf"]         = actions.goto_file,         -- Open the file in a new split in the previous tabpage
       ["<C-w><C-f>"] = actions.goto_file_split,   -- Open the file in a new split
       ["<C-w>gf"]    = actions.goto_file_tab,     -- Open the file in a new tabpage
       ["<leader>e"]  = actions.focus_files,       -- Bring focus to the files panel
