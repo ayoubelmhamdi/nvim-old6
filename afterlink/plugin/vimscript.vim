@@ -7,13 +7,13 @@ hi signcolumn guifg=NONE guibg=NONE
 
 
 " restore cursor position
-augroup restore_pos |
-  au!
-  au BufReadPost *
-      \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-      \ |   exe "normal! g`\"zz"
-      \ | endif
-augroup end
+" augroup restore_pos |
+"   au!
+"   au BufReadPost *
+"       \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+"       \ |   exe "normal! g`\"zz"
+"       \ | endif
+" augroup end
 
 
 set guifont=FiraCode\ Nerd\ Font:h14
