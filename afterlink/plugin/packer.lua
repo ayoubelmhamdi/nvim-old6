@@ -41,7 +41,7 @@ require("packer").startup(function(use)
   use "octaltree/cmp-look"
   use "f3fora/cmp-spell"
   -- use 'uga-rosa/cmp-user_dictionary'
-  use { "tzachar/cmp-tabnine", run = "./install.sh" }
+  -- use { "tzachar/cmp-tabnine", run = "./install.sh" }
   -- use {'f3fora/cmp-nuspell', rocks = {'lua-nuspell'}}
 
   -- use "ayoubelmhamdi/friendly-snippets"
@@ -105,6 +105,7 @@ require("packer").startup(function(use)
   -- use 'jakewvincent/texmagic.nvim'
 
   -- static config
+  use "luukvbaal/nnn.nvim"
   use "static-nvim/mkdir"
   use "fedepujol/move.nvim"
   use "tamton-aquib/essentials.nvim"
