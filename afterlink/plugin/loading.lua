@@ -58,6 +58,7 @@ hi GitSignsDelete guibg=NONE
 hi GitSignsDelete guibg=NONE
 hi GitSignsChange guibg=NONE
 ]]
+
 Prequire('gitsigns').setup {
   signs = {
     add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},

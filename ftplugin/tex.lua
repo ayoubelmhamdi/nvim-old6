@@ -1,4 +1,4 @@
-local null_ls = Prequire("null-ls")
+local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
 local completion = null_ls.builtins.completion
 -- local diagnostics = null_ls.builtins.diagnostics
